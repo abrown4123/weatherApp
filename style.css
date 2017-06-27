@@ -1,0 +1,89 @@
+html, body{
+	height:100%;
+	overflow:hidden;
+}
+
+body {
+	font-family: 'Bitter', serif;
+	background-position: center center;
+	background-repeat:  no-repeat;
+	background-attachment: fixed;
+	background-size:  cover;
+	background-color: #aec6cf;
+	padding:0;
+	margin: 0;
+}
+.hide{
+	display:none
+}
+
+#wrapper {
+	width: 40%;
+	min-width: 400px;
+	height: auto;
+	text-align: center;
+	margin: 10% auto;
+	background-color: rgba(255, 255, 255, 0.7);
+	box-shadow: 5px 5px 5px black;
+	border-radius: 10px;
+	padding: 20px;
+}
+
+
+ul {
+	width: 250px;
+	height: auto;
+	margin: 10px auto;
+	text-align:center;
+	list-style-type:none;
+	padding: 0;
+	font-size: 20px;
+}
+
+h3{display: inline;}
+
+img{
+	width: 20px;
+	height: auto;
+	vertical-align: bottom;
+}
+
+#temp {
+	display: inline-block;
+	vertical-align: bottom;
+	margin: 0 auto;
+	width: 60px;
+	height: auto;
+	font-size: 25px;
+}
+
+
+
+button{
+	background-color: #3399ff;  
+    border: none;
+	box-shadow: 0 2px black;
+    color: white;
+    padding: 10px 4px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 12px;
+	border-radius: 5px;
+	outline: none;
+	font-family: 'Bitter', serif;
+	}
+	
+button:hover{
+	background-color: #4682b4;
+}
+
+button:active{
+	box-shadow: none;
+	background-color: #4682b4;
+	transform: translateY(2px);
+}
+
+#weather, #wind{
+	margin: 8px;
+}
+

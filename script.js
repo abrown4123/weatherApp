@@ -29,7 +29,7 @@ function IP(){
 
 function weatherGet(){
 	var weather = new XMLHttpRequest();
-	weather.open('GET', "http://api.openweathermap.org/data/2.5/weather?lat=" + pos + "&units=imperial&appid=" + weatherApiKey, true);
+	weather.open('GET', "http://api.openweathermap.org/data/2.5/weather?lat=" + pos + "&units=imperial&appid=" + "f406aa62a7893a89da4fff06d213a66b", true);
 	weather.onreadystatechange = function(){
 		if (weather.readyState === XMLHttpRequest.DONE && weather.status === 200){
 			var data = JSON.parse(weather.responseText);
@@ -66,7 +66,6 @@ function displayInfo(){
 	document.getElementById("city").innerHTML = cityName; // displays the location
 	document.getElementById("wind").innerHTML = "Wind: " + wind; //displays the wind speed
 	weather.innerHTML = main; //displays weather
-	document.getElementById("show").classList.remove("hide"); //removes hidden DOM
 }
 
 function toggle(){ // fahrenheit/ celcius button conversion

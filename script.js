@@ -7,7 +7,7 @@ var clouds;
 var temp;
 var humidity;
 var main;
-
+var weatherApiKey = "f406aa62a7893a89da4fff06d213a66b";
 var weather = document.getElementById("weather");// weather description
 var background = document.body.style; // grabs the body's background
 var units = document.getElementById("temp"); //grabs the element containing the temperature
@@ -16,11 +16,12 @@ var press = false; // default variable for the temperature button
 
 function IP(){
 	var loc = new XMLHttpRequest();
-	loc.open('GET','http://ip-api.com/json', true)
+	loc.open('GET','https://ipinfo.io/geo', true)
 	loc.onreadystatechange = function(){
 		if (loc.readyState === XMLHttpRequest.DONE && loc.status === 200){
 			info = JSON.parse(loc.responseText);
-			pos = info.lat + '&lon='+ info.lon;
+      console.log(info);
+			pos = info.city + ',' + info.country;
 			weatherGet();
 		}
 	};
@@ -29,7 +30,7 @@ function IP(){
 
 function weatherGet(){
 	var weather = new XMLHttpRequest();
-	weather.open('GET', "http://api.openweathermap.org/data/2.5/weather?lat=" + pos + "&units=imperial&appid=" + "f406aa62a7893a89da4fff06d213a66b", true);
+	weather.open('GET', "https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/weather?q=" + pos + "&units=imperial&appid=" + weatherApiKey, true);
 	weather.onreadystatechange = function(){
 		if (weather.readyState === XMLHttpRequest.DONE && weather.status === 200){
 			var data = JSON.parse(weather.responseText);
